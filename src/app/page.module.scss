@@ -1,0 +1,13 @@
+@use '~/styles/branding';
+
+.container {
+    margin: 0 branding.$base-spacing-unit;
+}
+
+.heroContainer {
+    background-color: branding.$background-color;
+    min-width: 800px;
+    margin: branding.$base-spacing-unit 0;
+    padding: branding.$base-spacing-unit branding.$double-spacing-unit;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .25);
+}

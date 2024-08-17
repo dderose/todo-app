@@ -1,0 +1,20 @@
+@use '~/styles/branding';
+
+.logo {
+    width: 144px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
+    overflow: auto;
+    margin: 0 auto;
+}
+
+.siteHeader {
+    display: flex;
+    padding: branding.$double-spacing-unit 0;
+    align-items: center;
+    column-gap: branding.$base-spacing-unit;
+}

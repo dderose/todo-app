@@ -1,0 +1,40 @@
+{
+  "name": "technical-interview-starter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "next build",
+    "dev": "npx prisma migrate dev && npx prisma db seed && next dev",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.18.0",
+    "next": "^14.0.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "swr": "^2.2.5",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.44.7",
+    "@types/node": "^18.17.0",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.54.0",
+    "eslint-config-next": "^14.0.4",
+    "postcss": "^8.4.31",
+    "prettier": "^3.1.0",
+    "prisma": "^5.18.0",
+    "sass": "^1.77.8",
+    "tsx": "^4.17.0",
+    "typescript": "^5.1.6"
+  },
+  "prisma": {
+    "seed": "node --loader ts-node/esm prisma/seed.ts"
+  }
+}

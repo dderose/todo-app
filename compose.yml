@@ -1,0 +1,33 @@
+services:
+  client:
+    container_name: todosnextapp
+    image: todosnextapp:1.0.0
+    build: ./
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/app
+    depends_on:
+      - db
+
+  # db service
+  db:
+    container_name: todosdb
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: todos
+    ports:
+      - 5432:5432
+    expose:
+      - "5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  pgdata: {}

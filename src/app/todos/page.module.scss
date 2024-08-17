@@ -1,0 +1,135 @@
+@use '~/styles/branding';
+
+.container {
+    margin: 0 branding.$base-spacing-unit;
+}
+
+.todosContainer {
+    background-color: branding.$background-color;
+    min-width: 800px;
+    margin: branding.$base-spacing-unit 0;
+    padding: branding.$base-spacing-unit branding.$double-spacing-unit;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .25);
+}
+
+.todoList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.todo {
+    display: flex;
+    column-gap: branding.$base-spacing-unit;
+    align-items: flex-start;
+    margin-bottom: branding.$double-spacing-unit;
+    padding: branding.$base-spacing-unit;
+    background-color: branding.$color-white;
+    border-radius: branding.$border-radius;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .1);
+}
+
+.todoComplete {
+    @extend .todo;
+    text-decoration: line-through;
+    color: branding.$disabled-color;
+}
+
+.todoTitle {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+}
+
+.todoContent {
+    flex: 1;
+}
+
+
+// Form Elements
+.formAddTodo {
+    background-color: branding.$color-white;
+    margin-bottom: branding.$double-spacing-unit;
+    padding: branding.$base-spacing-unit branding.$double-spacing-unit;
+    border-radius: branding.$border-radius;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .1);
+
+    label {
+        display: block;
+        margin-bottom: branding.$half-spacing-unit;
+        font-weight: 600;
+    }
+
+    input {
+        width: 100%;
+        padding: branding.$base-spacing-unit;
+        border: 1px solid branding.$seconday-color;
+        border-radius: branding.$border-radius;
+        background-color: branding.$accent-color2;
+    }
+
+    textarea {
+        width: 100%;
+        min-height: 100px;
+        padding: branding.$base-spacing-unit;
+        border: 1px solid branding.$seconday-color;
+        border-radius: branding.$border-radius;
+        background-color: branding.$accent-color2;
+    }
+
+    select {
+        padding: branding.$base-spacing-unit;
+        border: 1px solid branding.$seconday-color;
+        border-radius: branding.$border-radius;
+        background-color: branding.$accent-color2;
+    }
+
+    .formRow {
+        margin: 0 branding.$double-spacing-unit branding.$double-spacing-unit 0;
+    }
+
+    button {
+        padding: branding.$base-spacing-unit;
+        border: none;
+        border-radius: branding.$border-radius;
+        background-color: branding.$accent-color;
+        box-shadow: 0 0 3px rgba(0, 0, 0, .25);
+    }
+}
+
+.todoCheckbox {
+    display: grid;
+    place-content: center;
+    /* Remove most all native input styles */
+    appearance: none;
+    margin: 6px 0 0 0;
+
+    color: currentColor;
+    width: 20px;
+    height: 20px;
+    border: 2px solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+
+
+    &::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        transform: scale(0);
+        transform-origin: bottom left;
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--form-control-color);
+        background-color: CanvasText;
+    }
+
+    &:checked::before {
+        transform: scale(1);
+    }
+
+    &:disabled {
+        --form-control-color: var(--form-control-disabled);
+        color: var(--form-control-disabled);
+        cursor: not-allowed;
+    }
+}
