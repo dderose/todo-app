@@ -24,8 +24,8 @@ export default function RootLayout({
       <body className={`font-sans ${inter.variable}`}>
         <div className={styles.container}>
           <header className={styles.siteHeader}>
-            <Link href="/"><img src="/images/logo.svg" alt="Untether Labs logo" className={styles.logo} /></Link>
-            <div><strong>Frontend Interview Starter</strong></div>
+            <Link href="/">Home</Link> | 
+            <Link href="/todos">ToDo App</Link>
           </header>
 
           {children}

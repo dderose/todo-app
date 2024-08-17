@@ -1,10 +1,9 @@
-# Frontend Interview Starter
+# ToDO App
 
-Our frontend interviews all start with this template. From here, we'll ask you to build something that will slowly resemble a product feature, such as a todo app, an employee directory, etc.
+A basic todo app built in React with NextJS, PrismaJS, and PostgreSQL. It is dockerized as a development environment that can be directly worked on.
 
 ## Installation
 
 ```
-pnpm i
-pnpm dev // Will start the app on localhost:3000
+docker compose up -d
 ```
