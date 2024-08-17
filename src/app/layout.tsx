@@ -9,9 +9,9 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Frontend Interview | Untether Labs",
-  description: "Used in interviews with Untether Labs.",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  title: "ToDo App",
+  description: "Practice :)",
+  // icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 export default function RootLayout({
